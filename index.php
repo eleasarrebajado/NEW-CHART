@@ -68,11 +68,17 @@ session_start();
   <div class="main-container">
     <h1>CEBU HOME AND BUILDERS DASHBOARD</h1>
     <hr>
-
-    <!-- THIS IS THE BAR DIVISION START===========================  -->
-    <div class="main_bar_container">
-        <iframe src="bar.php" frameborder="0"></iframe>
-        <iframe src="bar.php" frameborder="0"></iframe>
+    
+    <div class="wrapper">
+      <!-- THIS IS THE BAR DIVISION START===========================  -->
+      <div class="main_bar_container">
+          <iframe src="dailySales.php" frameborder="0"></iframe> <!-- THIS IS THE FOOTRARIC GRAPH -->
+          <iframe src="line.php" frameborder="0"></iframe> <!-- THIS IS THE LINE GRAPH -->
+      </div>
+      <div class="main_bar_container">
+          <iframe src="bar.php" frameborder="0"></iframe> <!-- THIS IS THE BAR GRAPH -->
+          <iframe src="" frameborder="0"></iframe> <!-- NO DATA -->
+        </div>
     </div>
     
   </div>

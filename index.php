@@ -72,15 +72,15 @@ session_start();
     <div class="wrapper">
       <!-- THIS IS THE BAR DIVISION START===========================  -->
       <div class="main_bar_container">
-          <iframe src="dailySales.php" frameborder="0"></iframe> <!-- THIS IS THE FOOTRARIC GRAPH -->
-          <iframe src="line.php" frameborder="0"></iframe> <!-- THIS IS THE LINE GRAPH -->
-      </div>
-      <div class="main_bar_container">
-          <iframe src="bar.php" frameborder="0"></iframe> <!-- THIS IS THE BAR GRAPH -->
-          <iframe src="" frameborder="0"></iframe> <!-- NO DATA -->
+        <div class="box">
+          <iframe src="dailySales.php" frameborder="0"></iframe>
         </div>
+        <div class="box">
+          <iframe src="line.php" frameborder="0"></iframe>
+          <iframe src="" frameborder="0"></iframe>
+        </div>
+      </div>
     </div>
-    
   </div>
 </main>
 

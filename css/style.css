@@ -52,7 +52,7 @@ main .loginMainDiv .loginContainer form .loginInput {
   padding: 0 9px;
   display: flex;
   align-items: center;
-  margin-top: 80.18px;
+  margin-top: 51px;
   border-radius: 16px;
   background-color: #ffffff;
 }
@@ -78,7 +78,7 @@ main .loginMainDiv .loginContainer form .loginInput input[type=text] {
 }
 main .loginMainDiv .loginContainer form input[type=submit] {
   width: 100%;
-  height: 32px;
+  height: 35px;
   margin-top: 23px;
   border: none;
   outline: none;

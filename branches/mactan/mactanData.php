@@ -1,9 +1,5 @@
-<?php require "../dbConnection.php";?>
-<?php
-$dates = 1;
-$banilad =  100;
-?>
-  
+<?php require "../../dbConnection.php";?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

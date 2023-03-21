@@ -1,5 +1,5 @@
 <?php
-  require "dbConnection.php";
+  require "../../dbConnection.php";
   session_start();
 ?>
 <!DOCTYPE html>
@@ -31,17 +31,21 @@
     background-color: #2e2e2e;
   }
 
-  .currency_box{
+  .currency_box:nth-child(1), .currency_box:nth-child(3), .currency_box:nth-child(4){
     max-width: 100%;
     padding: 12px;
-    margin-bottom: 34px;
-    margin-top: 12px;
+    /* margin-bottom: 34px;
+    margin-top: 12px; */
     text-align: center;
   }
+ .currency_box:nth-child(3){
+    color: gray;
+  }
+
 
   .dailyStyle{
     position: relative;
-    padding: 12px;
+    padding: 3px;
   }
 
   .session_box{
@@ -57,6 +61,13 @@
     height: 400px;
     bottom: 0;
     right: 220px;
+    }
+
+    #myChart2{
+      display: block;
+    box-sizing: border-box;
+    height: 320px!important;
+    width: 400px;
     }
   </style>
 
@@ -123,8 +134,10 @@ if(isset($_GET['dates'])){
 <script src="js/chart.js"></script>
 
 <div class="dailyStyle">
+<div class="currency_box">Daily Sales Comparison</div>
   <canvas id="myChart"></canvas>
   <div class="currency_box">Sales in Pesos</div>
+  <div class="currency_box">Foot Traffic vs Transaction Count</div>
   <canvas id="myChart2"></canvas>
 </div>
 
@@ -233,16 +246,16 @@ if(isset($_GET['dates'])){
         borderRadius: 5
       },
 
-      {
-        label: 'Daily Sales3',
-        data: [23],
-        backgroundColor: [
-          'rgb(255 159 64 / 86%)'
-        ],
-        // borderColor: '#36A2EB',
-        borderWidth: 1,
-        borderRadius: 5
-      }
+      // {
+      //   label: 'Daily Sales3',
+      //   data: [23],
+      //   backgroundColor: [
+      //     'rgb(255 159 64 / 86%)'
+      //   ],
+      //   // borderColor: '#36A2EB',
+      //   borderWidth: 1,
+      //   borderRadius: 5
+      // }
     ]
     
     },
@@ -269,7 +282,7 @@ endwhile;
 }
 } else {
 
-  $sql = "SELECT * FROM dailysales_foottr ORDER BY 	dates_server DESC";
+  $sql = "SELECT * FROM dailysales_foottr ORDER BY dates_server DESC";
   $stmt = $conn->prepare($sql);
   $stmt->execute();
   $result = $stmt->get_result();
@@ -291,9 +304,10 @@ endwhile;
 <script src="js/chart.js"></script>
 
 <div class="dailyStyle">
-
+<div class="currency_box">Daily Sales Comparison</div>
   <canvas id="myChart"></canvas>
   <div class="currency_box">Sales in Pesos</div>
+  <div class="currency_box">Foot Traffic vs Transaction Count</div>
   <canvas id="myChart2"></canvas>
 </div>
 

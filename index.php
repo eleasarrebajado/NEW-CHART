@@ -32,7 +32,7 @@
                             <p>BANILAD</p>
                         </div>
                     </a>
-                    <a href="banilad.php">
+                    <a href="mactan.php">
                         <div class="branch_box">
                             <div class="branch_box_img">
                                 <img src="images/store-img.png" alt="">

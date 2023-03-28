@@ -1,17 +1,31 @@
 let comVarBtn = document.querySelectorAll(".components");
-let letbrachVar = document.querySelector(".branches-container");
+let letbrachVar = document.querySelectorAll(".branches-container");
 // this is the end of components division end ================================
 
 
-comVarBtn.forEach(comVal => {
+comVarBtn.forEach((comVal, indexComval) => {
     comVal.addEventListener("click", ()=>{
-        branchFunct();
-    })
+        branchFunct(indexComval);
+    });
+
+
+
+
+    function branchFunct(){
+        letbrachVar.forEach((branDrop, idx2) =>{
+            if(indexComval === idx2){
+                branDrop.classList.toggle("sample");
+            } else {
+                branDrop.classList.remove("sample");
+            }
+        });
+    }
+    
 });
 
-function branchFunct(){
-    letbrachVar.classList.toggle("sample");
-}
+
+
+
 
 
 // this is the side nav closing division start ================================

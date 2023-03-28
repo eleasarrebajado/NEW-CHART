@@ -105,6 +105,7 @@
         opacity: 0.9;
         cursor: pointer;
         transition: all 0.2s ease-in-out;
+        border: 1px solid #28364d;
 
         ul{
             padding: 0;
@@ -136,6 +137,7 @@
             height: 300px;
             transition: all 0.3s ease-in-out;
             overflow: hidden;
+            border-bottom: 3px solid #27303f;
         }
     }
 
@@ -160,13 +162,13 @@
                 bottom: 8px;
                 right: -25px;
                 z-index: 100;
-                background-color: rgb(217, 95, 2);
+                background-color: #db9b37;
                 border-radius: 50%;
                 cursor: pointer;
                 box-shadow: -2px 2px 2px #00000096;
 
                 &:hover{
-                    background-color: rgb(248, 108, 0);
+                    background-color: #d3942e;
                 }
             }
         }

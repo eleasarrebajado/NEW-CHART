@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <script type="text/javascript" src="js/loader.js"></script>
+    <!-- <script type="text/javascript" src="js/loader.js"></script> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
@@ -48,14 +48,12 @@ session_start();
           <ul>
             <a href="banilad.php"><li>Banilad</li></a>
             <a href="mactan.php"><li>Mactan</li></a>
-            <li>Consolacion</li>
+            <a href="consolacion.php"><li>Consolacion</li></a>
             <li>Minglanilla</li>
             <li>N. Bacalso</li>
             <li>Carcar</li>
           </ul>
         </div>
-        
-
 
         <div class="btn-hide">
           <div class="btn-box">

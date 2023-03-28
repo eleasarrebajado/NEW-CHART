@@ -24,7 +24,7 @@
                     <h1>BRANCHES</h1>
                </div>
                <div class="brnch_title">
-                    <a href="banilad.php">
+                    <a href="login/login.php">
                         <div class="branch_box">
                             <div class="branch_box_img">
                                 <img src="images/store-img.png" alt="">
@@ -32,7 +32,7 @@
                             <p>BANILAD</p>
                         </div>
                     </a>
-                    <a href="mactan.php">
+                    <a href="login/login.php">
                         <div class="branch_box">
                             <div class="branch_box_img">
                                 <img src="images/store-img.png" alt="">
@@ -40,7 +40,7 @@
                             <p>MACTAN</p>
                         </div>
                     </a>
-                    <a href="banilad.php">
+                    <a href="login/login.php">
                         <div class="branch_box">
                             <div class="branch_box_img">
                                 <img src="images/store-img.png" alt="">
@@ -50,7 +50,7 @@
                     </a>    
                </div>
                <div class="brnch_title">
-                    <a href="banilad.php">
+                    <a href="login/login.php">
                         <div class="branch_box">
                             <div class="branch_box_img">
                                 <img src="images/store-img.png" alt="">
@@ -58,7 +58,7 @@
                             <p>MINGLANILLA</p>
                         </div>
                     </a>
-                    <a href="banilad.php">
+                    <a href="login/login.php">
                         <div class="branch_box">
                             <div class="branch_box_img">
                                 <img src="images/store-img.png" alt="">
@@ -66,7 +66,7 @@
                             <p>N. BACALSO</p>
                         </div>
                     </a>
-                    <a href="banilad.php">
+                    <a href="login/login.php">
                         <div class="branch_box">
                             <div class="branch_box_img">
                                 <img src="images/store-img.png" alt="">

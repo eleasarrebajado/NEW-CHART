@@ -188,6 +188,7 @@ main .loginMainDiv .loginContainer form input[type=submit]:hover {
   opacity: 0.9;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  border: 1px solid #28364d;
 }
 .side-nav .branches-container ul {
   padding: 0;
@@ -213,6 +214,7 @@ main .loginMainDiv .loginContainer form input[type=submit]:hover {
   height: 300px;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
+  border-bottom: 3px solid #27303f;
 }
 .side-nav .btn-hide {
   width: 100%;
@@ -235,13 +237,13 @@ main .loginMainDiv .loginContainer form input[type=submit]:hover {
   bottom: 8px;
   right: -25px;
   z-index: 100;
-  background-color: rgb(217, 95, 2);
+  background-color: #db9b37;
   border-radius: 50%;
   cursor: pointer;
   box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5882352941);
 }
 .side-nav .btn-hide .btn-box .hide-btn:hover {
-  background-color: rgb(248, 108, 0);
+  background-color: #d3942e;
 }
 .side-nav .btn-hide.sample {
   color: red;
@@ -339,10 +341,10 @@ main .main-container .wrapper .main_bar_container {
 }
 main .main-container .wrapper .main_bar_container .box {
   width: 50%;
-  height: 900px;
+  height: 1200px;
   padding: 12px;
 }
 main .main-container .wrapper .main_bar_container .box iframe {
   width: 100%;
-  height: 900px;
+  height: 1200px;
 }

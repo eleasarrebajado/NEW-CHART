@@ -64,12 +64,6 @@ form{
     
   }
 
-  span{
-    color: red;
-    font-size: 20px;
-    margin-right: 12px;
-  }
-
     #chart_div{
       position: absolute;
     width: 400px;
@@ -77,6 +71,13 @@ form{
     bottom: 0;
     right: 220px;
     }
+
+    
+  span{
+    color: red;
+    font-size: 20px;
+    margin-right: 12px;
+  }
 
     #myChart2{
       display: block;
@@ -117,7 +118,7 @@ if(isset($_GET['dates'])){
   //   echo $sample = $_SESSION['no_input'] = "Select Date";
   // }else {
 
-    $sql = "SELECT * FROM mactandailysales_foottr WHERE dates_server LIKE CONCAT('%',?,'%')";
+    $sql = "SELECT * FROM consolaciondailysales_foottr WHERE dates_server LIKE CONCAT('%',?,'%')";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $datesCalendar);
     $stmt->execute();
@@ -134,10 +135,7 @@ if(isset($_GET['dates'])){
         
         $total = $trans_count / $foot_trfic;  
         $total_count_rate = number_format((float) $total,'2','.','');
-      
-
-        
-      
+     
 ?>
 
 
@@ -155,7 +153,7 @@ if(isset($_GET['dates'])){
   <div class="currency_box">Sales in Pesos</div>
   <div class="currency_box">MTD Foot Traffic vs Transaction Count</div>
   <canvas id="myChart2"></canvas>
-  <div class="cnversation">Conversion Rate: <span><?php echo $total_count_rate; ?></span></div>
+  <div class="cnversation">Conversion Rate: <span> <?php echo $total_count_rate; ?><span></div>
 </div>
 
 
@@ -302,7 +300,7 @@ endwhile;
 }
 } else {
 
-  $sql = "SELECT * FROM mactandailysales_foottr ORDER BY 	dates_server DESC";
+  $sql = "SELECT * FROM consolaciondailysales_foottr ORDER BY 	dates_server DESC";
   $stmt = $conn->prepare($sql);
   $stmt->execute();
   $result = $stmt->get_result();
@@ -316,8 +314,8 @@ endwhile;
 
     $total = $trans_count / $foot_trfic;  
     $total_count_rate = number_format((float) $total,'2','.','');
-    
-  
+
+
 ?>
 
 
@@ -330,7 +328,7 @@ endwhile;
   <div class="currency_box">Sales in Pesos</div>
   <div class="currency_box">MTD Foot Traffic vs Transaction Count</div>
   <canvas id="myChart2"></canvas>
-  <div class="cnversation">Conversion Rate: <span><?php echo $total_count_rate; ?></span></div>
+  <div class="cnversation">Conversion Rate: <span> <?php echo $total_count_rate; ?><span></div>
 </div>
 
 
@@ -417,17 +415,6 @@ endwhile;
      
       datasets: [
         {
-        label: 'Transaction',
-        data: [<?= $trans_count; ?>],
-        backgroundColor: [
-          'rgb(255 99 132 / 86%)'
-        ],
-        // borderColor: '#36A2EB',
-        borderWidth: 1,
-        borderRadius: 5
-      },
-      
-        {
         label: 'Foot Traffic',
         data: [<?= $foot_trfic; ?>],
         backgroundColor: [
@@ -438,12 +425,22 @@ endwhile;
         borderRadius: 5
       },
 
+        {
+        label: 'Transaction',
+        data: [<?= $trans_count; ?>],
+        backgroundColor: [
+          'rgb(255 99 132 / 86%)'
+        ],
+        // borderColor: '#36A2EB',
+        borderWidth: 1,
+        borderRadius: 5
+      },
+
       {
         // label: 'Daily Sales3',
         data: [0],
         backgroundColor: [
-          // 'rgb(255 159 64 / 86%)' // uncomment this if the daily sales is ok
-          'gray'
+          'gray' // uncomment this if the daily sales is ok
         ],
         // borderColor: '#36A2EB',
         borderWidth: 1,

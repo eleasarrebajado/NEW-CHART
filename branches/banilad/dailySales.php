@@ -55,6 +55,21 @@
     background-color: green!important;
   }
 
+  .cnversation{
+    max-width: 100%;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  span{
+    color: red;
+    font-size: 20px;
+    margin-right: 12px;
+  }
+
     #chart_div{
       position: absolute;
     width: 400px;
@@ -102,7 +117,7 @@ if(isset($_GET['dates'])){
   //   echo $sample = $_SESSION['no_input'] = "Select Date";
   // }else {
 
-    $sql = "SELECT * FROM dailysales_foottr WHERE dates_server LIKE CONCAT('%',?,'%')";
+    $sql = "SELECT * FROM baniladdailysales_foottr WHERE dates_server LIKE CONCAT('%',?,'%')";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $datesCalendar);
     $stmt->execute();
@@ -117,7 +132,10 @@ if(isset($_GET['dates'])){
         $trans_count = $row["trans_count"];
         $foot_trfic = $row["foot_trfic"];
         
-      
+        $total = $trans_count / $foot_trfic;  
+        $total_count_rate = number_format((float) $total,'2','.','');
+
+
       
 
         
@@ -134,11 +152,12 @@ if(isset($_GET['dates'])){
 <script src="js/chart.js"></script>
 
 <div class="dailyStyle">
-<div class="currency_box">Daily Sales Comparison</div>
+<div class="currency_box">MTD Sales Comparison</div>
   <canvas id="myChart"></canvas>
   <div class="currency_box">Sales in Pesos</div>
-  <div class="currency_box">Foot Traffic vs Transaction Count</div>
+  <div class="currency_box">MTD Foot Traffic vs Transaction Count</div>
   <canvas id="myChart2"></canvas>
+  <div class="cnversation">Conversion Rate: <span><?php echo $total_count_rate; ?></span></div>
 </div>
 
 
@@ -225,6 +244,16 @@ if(isset($_GET['dates'])){
      
       datasets: [
         {
+        label: 'Transaction',
+        data: [<?= $trans_count; ?>],
+        backgroundColor: [
+          'rgb(255 99 132 / 86%)'
+        ],
+        // borderColor: '#36A2EB',
+        borderWidth: 1,
+        borderRadius: 5
+      },
+      {
         label: 'Foot Traffic',
         data: [<?= $foot_trfic; ?>],
         backgroundColor: [
@@ -235,27 +264,17 @@ if(isset($_GET['dates'])){
         borderRadius: 5
       },
 
-        {
-        label: 'Transaction',
-        data: [<?= $trans_count; ?>],
+      {
+        // label: 'Daily Sales3',
+        data: [0],
         backgroundColor: [
-          'rgb(255 99 132 / 86%)'
+          // 'rgb(255 159 64 / 86%)'
+          'gray'
         ],
         // borderColor: '#36A2EB',
         borderWidth: 1,
         borderRadius: 5
-      },
-
-      // {
-      //   label: 'Daily Sales3',
-      //   data: [23],
-      //   backgroundColor: [
-      //     'rgb(255 159 64 / 86%)'
-      //   ],
-      //   // borderColor: '#36A2EB',
-      //   borderWidth: 1,
-      //   borderRadius: 5
-      // }
+      }
     ]
     
     },
@@ -282,7 +301,7 @@ endwhile;
 }
 } else {
 
-  $sql = "SELECT * FROM dailysales_foottr ORDER BY dates_server DESC";
+  $sql = "SELECT * FROM baniladdailysales_foottr ORDER BY dates_server DESC";
   $stmt = $conn->prepare($sql);
   $stmt->execute();
   $result = $stmt->get_result();
@@ -293,6 +312,12 @@ endwhile;
     $last_y_dailysales = $row["last_y_dailysales"];
     $trans_count = $row["trans_count"];
     $foot_trfic = $row["foot_trfic"];
+    
+    $total = $trans_count / $foot_trfic;
+    $total_count_rate = number_format((float) $total,'2','.','');
+
+
+
 
 
     
@@ -304,11 +329,12 @@ endwhile;
 <script src="js/chart.js"></script>
 
 <div class="dailyStyle">
-<div class="currency_box">Daily Sales Comparison</div>
+<div class="currency_box">MTD Daily Sales Comparison</div>
   <canvas id="myChart"></canvas>
   <div class="currency_box">Sales in Pesos</div>
-  <div class="currency_box">Foot Traffic vs Transaction Count</div>
+  <div class="currency_box">MTD Foot Traffic vs Transaction Count</div>
   <canvas id="myChart2"></canvas>
+  <div class="cnversation">Conversion Rate: <span> <?php echo $total_count_rate; ?><span></div>
 </div>
 
 
@@ -418,13 +444,14 @@ endwhile;
 
       {
         // label: 'Daily Sales3',
-        // data: [23],
-        // backgroundColor: [
-        //   'rgb(255 159 64 / 86%)' // uncomment this if the daily sales is ok
-        // ],
-        // // borderColor: '#36A2EB',
-        // borderWidth: 1,
-        // borderRadius: 5
+        data: [0],
+        backgroundColor: [
+          // 'rgb(255 159 64 / 86%)' // uncomment this if the daily sales is ok
+          'gray'
+        ],
+        // borderColor: '#36A2EB',
+        borderWidth: 1,
+        borderRadius: 5
       }
     ]
     

@@ -66,17 +66,17 @@ session_start();
       <script src="js/index.js"></script>
   <!-- this is the side nav end ----------------------- -->
   <div class="main-container">
-    <h1>MACTAN DASHBOARD</h1>
+    <h1>CONSOLACION DASHBOARD</h1>
     <hr>
     
     <div class="wrapper">
       <!-- THIS IS THE BAR DIVISION START===========================  -->
       <div class="main_bar_container">
         <div class="box">
-          <iframe src="branches/mactan/dailySales.php" frameborder="0"></iframe>
+          <iframe src="branches/consolacion/dailySales.php" frameborder="0"></iframe>
         </div>
         <div class="box">
-          <iframe src="branches/mactan/line.php" frameborder="0"></iframe>
+          <iframe src="branches/consolacion/line.php" frameborder="0"></iframe>
           <iframe src="" frameborder="0"></iframe>
         </div>
       </div>

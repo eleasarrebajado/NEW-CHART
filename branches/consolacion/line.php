@@ -23,7 +23,7 @@
 <body>
 <?php 
 
-$sql = "SELECT * FROM mactanTable";
+$sql = "SELECT * FROM consolaciontable";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $result = $stmt->get_result();

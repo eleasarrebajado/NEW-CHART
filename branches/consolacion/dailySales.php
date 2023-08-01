@@ -148,7 +148,7 @@ if(isset($_GET['dates'])){
 <script src="js/chart.js"></script>
 
 <div class="dailyStyle">
-<div class="currency_box">MTD Daily Sales Comparison</div>
+<div class="currency_box">MTD Sales Comparison</div>
   <canvas id="myChart"></canvas>
   <div class="currency_box">Sales in Pesos</div>
   <div class="currency_box">MTD Foot Traffic vs Transaction Count</div>
@@ -176,7 +176,7 @@ if(isset($_GET['dates'])){
      
       datasets: [
         {
-        label: 'Daily Plan',
+        label: 'MTD Sales Plan',
         data: [<?= $daily_plan; ?>],
         backgroundColor: [
           'rgb(255 99 132 / 86%)'
@@ -187,7 +187,7 @@ if(isset($_GET['dates'])){
       },
 
         {
-        label: 'Daily Sales Actual',
+        label: 'MTD Sales Actual',
         data: [<?= $daily_sales; ?>],
         backgroundColor: [
           'rgb(75 192 192 / 86%)'
@@ -323,7 +323,7 @@ endwhile;
 <script src="js/chart.js"></script>
 
 <div class="dailyStyle">
-  <div class="currency_box">MTD Daily Sales Comparison</div>
+  <div class="currency_box">MTD Sales Comparison</div>
   <canvas id="myChart"></canvas>
   <div class="currency_box">Sales in Pesos</div>
   <div class="currency_box">MTD Foot Traffic vs Transaction Count</div>
@@ -351,7 +351,7 @@ endwhile;
      
       datasets: [
         {
-        label: 'Daily Plan',
+        label: 'MTD Sales Plan',
         data: [<?= $daily_plan; ?>],
         backgroundColor: [
           'rgb(255 99 132 / 86%)'
@@ -362,7 +362,7 @@ endwhile;
       },
 
         {
-        label: 'Daily Sales Actual',
+        label: 'MTD Sales Actual',
         data: [<?= $daily_sales; ?>],
         backgroundColor: [
           'rgb(75 192 192 / 86%)'

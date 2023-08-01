@@ -150,7 +150,7 @@ if(isset($_GET['dates'])){
 <script src="js/chart.js"></script>
 
 <div class="dailyStyle">
-<div class="currency_box">MTD Daily Sales Comparison</div>
+<div class="currency_box">MTD Sales Comparison</div>
   <canvas id="myChart"></canvas>
   <div class="currency_box">Sales in Pesos</div>
   <div class="currency_box">MTD Foot Traffic vs Transaction Count</div>
@@ -178,7 +178,7 @@ if(isset($_GET['dates'])){
      
       datasets: [
         {
-        label: 'Daily Plan',
+        label: 'MTD Sales Plan',
         data: [<?= $daily_plan; ?>],
         backgroundColor: [
           'rgb(255 99 132 / 86%)'
@@ -189,7 +189,7 @@ if(isset($_GET['dates'])){
       },
 
         {
-        label: 'Daily Sales Actual',
+        label: 'MTD Sales Actual',
         data: [<?= $daily_sales; ?>],
         backgroundColor: [
           'rgb(75 192 192 / 86%)'
@@ -325,7 +325,7 @@ endwhile;
 <script src="js/chart.js"></script>
 
 <div class="dailyStyle">
-  <div class="currency_box">MTD Daily Sales Comparison</div>
+  <div class="currency_box">MTD Sales Comparison</div>
   <canvas id="myChart"></canvas>
   <div class="currency_box">Sales in Pesos</div>
   <div class="currency_box">MTD Foot Traffic vs Transaction Count</div>
@@ -353,7 +353,7 @@ endwhile;
      
       datasets: [
         {
-        label: 'Daily Plan',
+        label: 'MTD Sales Plan',
         data: [<?= $daily_plan; ?>],
         backgroundColor: [
           'rgb(255 99 132 / 86%)'
@@ -364,7 +364,7 @@ endwhile;
       },
 
         {
-        label: 'Daily Sales Actual',
+        label: 'MTD Sales Actual',
         data: [<?= $daily_sales; ?>],
         backgroundColor: [
           'rgb(75 192 192 / 86%)'
@@ -417,21 +417,20 @@ endwhile;
      
       datasets: [
         {
-        label: 'Transaction',
-        data: [<?= $trans_count; ?>],
+        label: 'Foot Traffic',
+        data: [<?= $foot_trfic; ?>],
         backgroundColor: [
-          'rgb(255 99 132 / 86%)'
+          'rgb(54 162 235 / 86%)'
         ],
         // borderColor: '#36A2EB',
         borderWidth: 1,
         borderRadius: 5
       },
-      
         {
-        label: 'Foot Traffic',
-        data: [<?= $foot_trfic; ?>],
+        label: 'Transaction',
+        data: [<?= $trans_count; ?>],
         backgroundColor: [
-          'rgb(54 162 235 / 86%)'
+          'rgb(255 99 132 / 86%)'
         ],
         // borderColor: '#36A2EB',
         borderWidth: 1,

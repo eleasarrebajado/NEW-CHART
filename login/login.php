@@ -26,7 +26,7 @@ require_once 'php/validation.php';
                             <div class="logImg"><img src="../images/mdi_user.png" alt=""></div><input type="text" name="userName" value="" placeholder="username">
                         </div>
                         <div class="loginInput">
-                            <div class="logImg"><img src="../images/material-symbols_key.png" alt=""></div><input type="text" name="userPass" value="" placeholder="password">
+                            <div class="logImg"><img src="../images/material-symbols_key.png" alt=""></div><input type="password" name="userPass" value="" placeholder="password">
                         </div>
                             <input type="submit" name="submit" value="SUBMIT">
                     </form>
@@ -42,6 +42,10 @@ require_once 'php/validation.php';
 
                             if($_GET['error'] === "wrongUser"){
                                 echo "<p style='color: red;'>Invalid user</p>";
+                            }
+
+                            if($_GET['error'] === "wrongpass"){
+                                echo "<p style='color: red;'>Wrong Password</p>";
                             }
                         }
                     ?>

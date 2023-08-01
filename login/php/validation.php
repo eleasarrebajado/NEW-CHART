@@ -8,6 +8,7 @@ require_once 'dbsample.php';
 if(isset($_POST['submit'])){
     $userName = $_POST['userName'];
     $userPass = $_POST['userPass'];
+    $pwdHas = md5($userPass);
 
 
 
@@ -29,45 +30,23 @@ if(inValidUser($userName) !== FALSE){
 
 
 
+$sql = "SELECT * FROM adminuserpass WHERE userName = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $userName);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
 
 
-
-
-
-
-
-
-
-// $sql = "SELECT * FROM adminuserpass WHERE userName = ? AND userPass = ?";
-// $stmt = $conn->prepare($sql);
-// $stmt->bind_param("ss", $userName, $userPass);
-// $stmt->execute();
-// $result = $stmt->get_result();
-// $row = $result->fetch_assoc();
-
-
-// if($row['userName'] !== $userName){
-//     $null = is_null($row['userName']);
-//     echo $null;
-//     // header("location: login.php?error=wrongUser");
-
-// } else {
-//     $pwdHas = password_hash($userPass, PASSWORD_DEFAULT);
-//     if(password_verify($row['userPass'], $pwdHas)){
-//         header("location: login.php?error=success");
-//     }else{
-//         header("location: login.php?error=InvalidPass");
-//     }
-// }
-
-
-
-
-
-
-
-
-
+if($row['userName'] !== $userName){
+    header("location: login.php?error=wrongUser");
+} else {
+    if($row['userPass'] === $pwdHas){
+        header("location: ../banilad.php?error=success");
+    }else{
+        header("location: login.php?error=wrongpass");
+    }
+}
 
 
 }

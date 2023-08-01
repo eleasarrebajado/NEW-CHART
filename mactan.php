@@ -41,19 +41,16 @@ session_start();
             Dashboard
         </div>
 
-        <div class="components">
-          BRANCHES
-        </div>
-        <div class="branches-container">
-          <ul>
-            <a href="banilad.php"><li>Banilad</li></a>
-            <a href="mactan.php"><li>Mactan</li></a>
-            <a href="consolacion.php"><li>Consolacion</li></a>
-            <li>Minglanilla</li>
-            <li>N. Bacalso</li>
-            <li>Carcar</li>
-          </ul>
-        </div>
+        <!-- ---------------------------------------------------------- -->
+
+        <?php 
+        
+          @include 'branches/sideNav/sideNavInclude.php' 
+        
+        ?>
+
+
+ <!-- this is the side nav end ----------------------- -->
         
 
 
